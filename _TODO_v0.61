@@ -1,0 +1,77 @@
+
+//   -------------------------------------------------------------------------------
+//  |                                                                               |
+//  |                                  net2ftp                                      |
+//  |                                                                               |
+//  |                                 To do list                                    |
+//  |                                                                               |
+//   -------------------------------------------------------------------------------
+
+
+
+NEW FEATURES
+------------
+
+* Multi-lingual support
+
+* Apache/MySQL specific tools: password-protect directories, custom error pages, 
+  run SQL queries
+
+* Upload progress bar
+
+* Show thumbnails for gif, jpg and png files
+
+* Send/receive files by mail
+
+* Search files for given string
+
+* One-time passwords
+
+* Client-side encryption with javascript
+
+* Make FTP files available via HTML link, like for example: 
+  <img src="http://www.net2ftp.com/getfile.php?ftpserver=ftp.myserver.com&file=/home/david/mypicture.jpg">
+
+* Add compression of the HTML output, if the browser supports it.
+  This should do the trick: ob_start("ob_gzhandler")
+
+* Sign a file (MD5)
+
+* There is a function that maps the FTP server and directory, to the WEB (HTTP)
+  server and directory.
+
+  It is used on the Browse screen, when a user clicks on the filename, a new 
+  window opens in which that file is executed from its WEB (not FTP) server.
+
+  This function works perfectly if a domain name is used 
+  (eg ftp.mysite.com/dir/file.php is mapped to http://www.mysite.com/dir/file.php). 
+  However, this function has to be adapted on a case-by-case basis for most free 
+  hosts, because the mapping is different for each host.
+  Some examples:
+       ftp.freeserver.com/username/dir/file.php       can be mapped to   
+       
+       http://username.freeserver.com/dir/file.php
+       http://www.freeserver.com/username/dir/file.php
+       http://freeusers.freeserver.com//~username/dir/file.php
+  On the homepage, there should be a note for this, both for the users of free 
+  webhosts, and for the free webhosts, which would like their FTP server to be 
+  reachable using net2ftp
+
+* Install script
+
+* Bug report specifications for forum
+
+
+BUGS & TECHNICAL ISSUES
+-----------------------
+
+* The user Urban reported a problem with symlinks: relative symlinks work, but 
+  absolute ones not. When investigating this, it appeared that there are 
+  symlinks to directories, and symlinks to files. The problem is that a 
+  ftp_rawlist request does not show any difference... no solution yet.
+  
+  This can be tested on the public server ftp.belnet.be with username 
+  anonymous and password test@test.com -- any volunteers?
+
+* Solve the problem that slower FTP sites cannot be reached sometimes with 
+  net2ftp. This function may help: ftp_set_option(FTP_TIMEOUT_SEC)

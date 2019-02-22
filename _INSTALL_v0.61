@@ -1,0 +1,57 @@
+
+//   -------------------------------------------------------------------------------
+//  |                                                                               |
+//  |                                  net2ftp                                      |
+//  |                                                                               |
+//  |                           Installation instructions                           |
+//  |                                                                               |
+//   -------------------------------------------------------------------------------
+
+
+
+Requirements
+------------
+- Web server: 	any web server which can run PHP. The most popular one is Apache
+- PHP:        	at least version 4. net2ftp works under safemode
+- Disk space: 	150kB for net2ftp, and a few MB for the temporary files
+
+
+Installation steps
+------------------
+1 - Unzip all the files on your computer, and upload them to your server.
+2 - The /temp directory should be chmodded to 777 (you can use www.net2ftp.com 
+    to do this).
+3 - Set your settings in the settings.inc.php file.
+4 - A database is only required if you want to log the actions of the users. To 
+    create the tables, execute the SQL queries in the "create_tables.sql" file. 
+    This can be done easily in PhpMyAdmin -- the popular front-end to MySQL.
+
+Done !
+
+
+Additional steps
+----------------
+* Protect the /temp and the /admin directories. To do this, create 
+  .htaccess and .htpasswd files.
+* In your php.ini file, register_globals can be set to "off" (this is more 
+  secure), but the application will off course also work if it is set to "on".
+* The files are transmitted using mode FTP_ASCII by default. 
+  There is a list of file extensions (zip, doc, ...) which are transmitted 
+  by FTP_BINARY.
+
+NOTE: IF YOUR SERVER RUNS WINDOWS
+---------------------------------
+There is a bug in the implementation of PHP on Windows: the ftp_rawlist and 
+ftp_nlist functions do not work. As net2ftp heavily needs these functions,
+the application will not work properly either.
+
+The user can log in, but the list of directories and files is empty.
+(The exact same function works well under Linux, Unix, and BSD.)
+
+I am not sure if this bug has been solved in recent versions of PHP. 
+Please refer to these links:
+
+- www.php.net/manual/en/function.ftp-rawlist.php (see the user note of ryan, 
+  posted on 21-Mar-2002 12:32)
+- http://bugs.php.net/bug.php?id=13913
+- http://bugs.php.net/bug.php?id=16057

@@ -1,0 +1,44 @@
+
+//   -------------------------------------------------------------------------------
+//  |                                                                               |
+//  |                                  net2ftp                                      |
+//  |                                                                               |
+//  |                                  Credits!                                     |
+//  |                                                                               |
+//   -------------------------------------------------------------------------------
+
+
+
+
+* net2ftp has been written by David Gartner
+
+* Developers who added new features:
+     Slynderdale: zip download, chmod checkboxes, directory listing
+
+* Developers who have written code that was included in net2ftp:
+     Eric Mueller, Denis125 and Peter Listiak (zip functions)
+     Tim Perdue (server-side browser detection)
+
+* Users who have submitted bug reports or helpful comments: 
+     Guangzu (the first user to send feedback)
+     Ryan (hints in 0.2)
+     eagleyes (hints in 0.2)
+     qM (browse bug in 0.2)
+     David (bug in SQL file in 0.2)
+     Kalle (PHP bug in function ftp_rawlist on Windows in 0.3)
+     Dan (max_upload_size difficult to find in 0.3, testing of net2ftp on windows)
+     Malte (fopen with option b in 0.3)
+     Ray (ftp_rmdir instead of ftp_delete in 0.3)
+     Ondrej (browse bug in 0.2, hint on saving the directory in the cookie)
+     Lars (hidden files option -a in 0.5)
+     David (. and .. entries on certain FTP sites, 0.5)
+     James (large file uploads configuration tips, 0.6)
+     Larry (ftp_chmod does not accept leading slashes, 0.61)
+
+* Sites which were particularly helpful:
+     www.php.net
+     www.phpbuilder.com
+     www.irt.org - excellent JavaScript FAQ
+     www.devguru.com - reference guides
+     www.w3schools.com - XHTML tutorial
+     www.w3.org - HTML validator service
